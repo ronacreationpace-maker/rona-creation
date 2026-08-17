@@ -198,3 +198,50 @@ RESPONSIVE
 }
 
 }
+
+/* ======================================
+   MOBILE - TABEL BARANG
+   ====================================== */
+
+@media (max-width: 600px) {
+
+    /* Tabel barang tetap bisa digeser ke samping */
+    .table-responsive {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Tabel barang */
+    #itemBody {
+        min-width: 620px;
+    }
+
+    /* Ukuran teks tabel */
+    #itemBody td,
+    #itemBody th {
+        padding: 8px 6px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    /* Kolom nama barang */
+    #itemBody td:nth-child(2) {
+        min-width: 170px;
+    }
+
+    /* Input dalam tabel */
+    #itemBody input,
+    #itemBody select {
+        font-size: 14px;
+        min-height: 42px;
+        padding: 6px 8px;
+    }
+
+    /* Tombol hapus */
+    #itemBody button {
+        min-width: 42px;
+        min-height: 42px;
+    }
+
+}

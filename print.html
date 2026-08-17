@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+Invoice RONA CREATION
+
+</title>
+
+<style>
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+}
+
+body{
+
+font-family:Arial,Helvetica,sans-serif;
+
+background:#ececec;
+
+padding:20px;
+
+color:#333;
+
+}
+
+.invoice{
+
+width:210mm;
+
+min-height:297mm;
+
+margin:auto;
+
+background:#fff;
+
+padding:30px;
+
+box-shadow:0 0 10px rgba(0,0,0,.12);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:flex-start;
+
+padding-bottom:10px;
+
+margin-bottom:18px;
+
+border-bottom:2px solid #b10000;
+
+}
+
+.brand{
+
+display:flex;
+
+align-items:flex-start;
+
+gap:12px;
+
+}
+
+.logo{
+
+width:65px;
+
+height:65px;
+
+object-fit:contain;
+
+flex-shrink:0;
+
+}
+
+.brand h1{
+
+margin:0;
+
+font-size:28px;
+
+font-weight:700;
+
+color:#b10000;
+
+letter-spacing:.5px;
+
+}
+
+.brand p{
+
+margin-top:4px;
+
+font-size:11px;
+
+line-height:1.5;
+
+color:#555;
+
+}
+
+.invoice-title{
+
+text-align:right;
+
+min-width:220px;
+
+}
+
+.invoice-title h2{
+
+margin:0;
+
+font-size:40px;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+color:#222;
+
+}
+
+.invoice-title p{
+
+margin-top:6px;
+
+font-size:13px;
+
+color:#666;
+
+}
+.info{
+
+display:flex;
+
+justify-content:space-between;
+
+gap:30px;
+
+margin-bottom:20px;
+
+}
+
+.info table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+.info td{
+
+padding:3px 0;
+
+font-size:13px;
+
+vertical-align:top;
+
+}
+
+.info td:first-child{
+
+width:95px;
+
+font-weight:bold;
+
+}
+
+.items{
+
+width:100%;
+
+border-collapse:collapse;
+
+margin:15px 0;
+
+font-size:13px;
+
+}
+
+.items{
+
+border-top:2px solid #b10000;
+
+border-bottom:2px solid #b10000;
+
+}
+
+.items th{
+
+background:#b10000;
+
+color:#fff;
+
+padding:10px 8px;
+
+font-size:13px;
+
+font-weight:bold;
+
+text-align:center;
+
+border:1px solid #b10000;
+
+}
+
+.items td{
+
+padding:9px 8px;
+
+font-size:13px;
+
+border-bottom:1px solid #e5e5e5;
+
+vertical-align:middle;
+
+}
+.items tbody tr:nth-child(even){
+
+background:#fafafa;
+
+}
+
+.items tbody tr:hover{
+
+background:#fff7f7;
+
+}
+
+.items td:nth-child(2){
+
+text-align:left;
+
+}
+
+.items td:nth-child(4),
+
+.items td:nth-child(5){
+
+text-align:right;
+
+}
+
+.items td:nth-child(1),
+
+.items td:nth-child(3){
+
+text-align:center;
+
+}
+
+.total-section{
+
+display:flex;
+
+justify-content:space-between;
+
+gap:25px;
+
+margin-top:25px;
+
+align-items:flex-start;
+
+}
+
+.payment{
+
+font-size:12px;
+
+line-height:1.8;
+
+}
+
+.payment h3{
+
+font-size:14px;
+
+color:#b10000;
+
+margin-bottom:10px;
+
+}
+
+.payment p{
+
+font-size:13px;
+
+line-height:1.7;
+
+}
+
+.summary{
+
+width:320px;
+
+margin-left:auto;
+
+border:1px solid #dcdcdc;
+
+border-radius:8px;
+
+overflow:hidden;
+
+background:#fff;
+
+box-shadow:0 2px 6px rgba(0,0,0,.08);
+
+}
+
+.summary table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+.summary td{
+
+padding:11px 14px;
+
+font-size:13px;
+
+border-bottom:1px solid #ececec;
+
+}
+
+.summary td:last-child{
+
+text-align:right;
+
+font-weight:bold;
+
+white-space:nowrap;
+
+}
+
+.summary tr:first-child{
+
+background:#fafafa;
+
+}
+
+.grand{
+
+background:#b10000;
+
+color:#fff;
+
+font-size:16px;
+
+font-weight:bold;
+
+}
+
+.grand td{
+
+padding:14px;
+
+border:none;
+
+}
+
+.grand td:last-child{
+
+font-size:20px;
+
+}
+
+.summary tr:nth-last-child(2){
+
+border-bottom:2px dashed #bbb;
+
+}
+
+.summary tr:nth-child(3) td:last-child{
+
+color:#d60000;
+
+}
+
+.summary tr:nth-child(4) td:last-child{
+
+color:#0066cc;
+
+}
+
+
+
+.bottom-section{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:flex-start;
+
+gap:50px;
+
+margin-top:35px;
+
+}
+
+.notes{
+
+flex:2;
+
+font-size:12px;
+
+line-height:1.8;
+
+border-top:1px dashed #ccc;
+
+padding-top:15px;
+
+}
+
+.signature{
+
+flex:1;
+
+text-align:center;
+
+padding-top:15px;
+
+}
+
+.signature h4{
+
+margin:0;
+
+font-size:14px;
+
+font-weight:normal;
+
+}
+
+.signature-space{
+
+height:50px;
+
+}
+
+.signature strong{
+
+font-size:15px;
+
+}
+
+.print-button{
+
+text-align:center;
+
+margin-top:30px;
+
+}
+
+.print-button button{
+
+padding:12px 28px;
+
+background:#b10000;
+
+color:white;
+
+border:none;
+
+border-radius:5px;
+
+font-size:15px;
+
+cursor:pointer;
+
+}
+
+.print-button button:hover{
+
+background:#8b0000;
+
+}
+
+@media print {
+
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    html,
+    body {
+        width: 210mm;
+        height: 297mm;
+        margin: 0;
+        padding: 0;
+        background: white;
+    }
+
+    .invoice {
+        width: 210mm;
+        height: 297mm;
+        min-height: 297mm;
+        margin: 0;
+        padding: 20px;
+        box-shadow: none;
+        overflow: hidden;
+    }
+
+    .print-button {
+        display: none !important;
+    }
+
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="invoice">
+
+<div class="header">
+
+<div class="brand">
+
+<img
+src="Logo.png"
+class="logo">
+
+<div>
+
+<h1>RONA CREATION</h1>
+
+<p>
+
+Percetakan • Souvenir • Custom Design
+
+<br>
+
+Dsn. Kauman RT.02 RW.06, Ds. Pacekulon, Kec. Pace, Kab. Nganjuk
+
+<br>
+
+WA 0812-5573-9197 • @rona.creation • ronacreation.pace@gmail.com
+
+</p>
+
+</div>
+
+</div>
+
+<div class="invoice-title">
+
+<h2>INVOICE</h2>
+
+<p id="noInvoice"></p>
+
+</div>
+
+</div>
+
+<div class="info">
+
+<table>
+
+<tr>
+
+<td>Customer</td>
+
+<td>:</td>
+
+<td id="customer"></td>
+
+</tr>
+
+<tr>
+
+<td>No. WA</td>
+
+<td>:</td>
+
+<td id="wa"></td>
+
+</tr>
+
+<tr>
+
+<td>Alamat</td>
+
+<td>:</td>
+
+<td id="alamat"></td>
+
+</tr>
+
+</table>
+
+<table>
+
+<tr>
+
+<td>Tanggal</td>
+
+<td>:</td>
+
+<td id="tanggal"></td>
+
+</tr>
+
+<tr>
+
+<td>Status</td>
+
+<td>:</td>
+
+<td id="status">Lunas</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<table class="items">
+
+<thead>
+
+<tr>
+
+<th>No</th>
+
+<th>Nama Barang</th>
+
+<th>Qty</th>
+
+<th>Harga</th>
+
+<th>Total</th>
+
+</tr>
+
+</thead>
+
+<tbody id="barang">
+
+    <tr>
+    <td colspan="5" style="text-align:center;color:#777;">
+        Data barang akan ditampilkan di sini
+    </td>
+</tr>
+
+</tbody>
+
+</table>
+
+<div class="total-section">
+
+    <div class="payment">
+
+
+        <p><strong>Bank BRI</strong></p>
+
+        <p>A/N : <strong>MOCH IBNU SALAM</strong></p>
+
+        <p>No. Rekening</p>
+
+        <h2 style="color:#b10000;margin:2px 0;">
+            642201003648500
+        </h2>
+        <p>
+            Mohon konfirmasi pembayaran melalui
+            WhatsApp setelah melakukan transfer.
+        </p>
+
+    </div>
+
+    <div class="summary">
+
+        <table>
+
+            <tr>
+                <td>Subtotal</td>
+                <td id="subtotal"></td>
+            </tr>
+
+            <tr>
+                <td>Ongkir</td>
+                <td id="ongkir"></td>
+            </tr>
+
+            <tr>
+                <td>Diskon</td>
+                <td id="diskon"></td>
+            </tr>
+
+            <tr>
+                <td>DP</td>
+                <td id="dp"></td>
+            </tr>
+
+            <tr class="grand">
+                <td>GRAND TOTAL</td>
+                <td id="grandtotal"></td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+
+<div class="bottom-section">
+
+    <div class="notes">
+
+        <strong>Catatan :</strong>
+
+        <br>
+
+        • Barang custom yang sudah diproses tidak dapat dibatalkan.<br>
+
+        • Komplain maksimal 1×24 jam setelah barang diterima.<br>
+
+        • Terima kasih telah mempercayakan kebutuhan Anda kepada
+        <strong>RONA CREATION</strong>.
+
+    </div>
+
+    <div class="signature">
+
+        <h4>Hormat Kami</h4>
+
+        <div class="signature-space"></div>
+
+        <strong>RONA CREATION</strong>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="print-button">
+
+    <button onclick="window.print()">
+
+        🖨 Cetak Invoice
+
+    </button>
+
+</div>
+
+</div>
+
+<script src="js/print.js"></script>
+
+</body>
+
+</html>

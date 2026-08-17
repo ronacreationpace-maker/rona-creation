@@ -1,0 +1,17 @@
+{
+    "name": "RONA CREATION",
+    "short_name": "RONA CREATION",
+    "description": "Aplikasi Invoice RONA CREATION",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#b10000",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "Logo.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

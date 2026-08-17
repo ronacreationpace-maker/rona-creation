@@ -1,0 +1,200 @@
+/* ======================================
+   RONA CREATION
+   style.css
+====================================== */
+
+body{
+
+    background:#f5f5f5;
+
+    font-family:
+    "Segoe UI",
+    Tahoma,
+    Geneva,
+    Verdana,
+    sans-serif;
+
+}
+
+
+/* ==========================
+NAVBAR
+========================== */
+
+.navbar{
+
+    padding:15px 25px;
+
+}
+
+.navbar-brand{
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    letter-spacing:1px;
+
+}
+
+
+/* ==========================
+CARD
+========================== */
+
+.card{
+
+    border:none;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+}
+
+.card-header{
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+.shadow{
+
+    box-shadow:
+    0 8px 20px
+    rgba(0,0,0,.12)!important;
+
+}
+
+
+/* ==========================
+LABEL
+========================== */
+
+label{
+
+    font-weight:600;
+
+}
+
+
+/* ==========================
+INPUT
+========================== */
+
+.form-control{
+
+    height:45px;
+
+}
+
+textarea.form-control{
+
+    height:auto;
+
+}
+
+
+/* ==========================
+TABLE
+========================== */
+
+.table th{
+
+    text-align:center;
+
+    vertical-align:middle;
+
+}
+
+.table td{
+
+    vertical-align:middle;
+
+}
+
+.table input{
+
+    border:none;
+
+    background:transparent;
+
+}
+
+.table input:focus{
+
+    box-shadow:none;
+
+}
+
+
+/* ==========================
+BUTTON
+========================== */
+
+.btn{
+
+    min-width:120px;
+
+    margin-left:5px;
+
+}
+
+
+/* ==========================
+TOTAL
+========================== */
+
+#subtotal,
+
+#grandtotal{
+
+    font-weight:bold;
+
+    background:#fff8e1;
+
+}
+
+
+/* ==========================
+MODAL
+========================== */
+
+.modal-header{
+
+    border-bottom:none;
+
+}
+
+.modal-content{
+
+    border-radius:12px;
+
+}
+
+
+/* ==========================
+RESPONSIVE
+========================== */
+
+@media(max-width:768px){
+
+.btn{
+
+    width:100%;
+
+    margin-bottom:10px;
+
+    margin-left:0;
+
+}
+
+.text-end{
+
+    text-align:center!important;
+
+}
+
+}

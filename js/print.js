@@ -15,7 +15,10 @@ window.onload = function () {
     const invoice =
         JSON.parse(localStorage.getItem("invoiceAktif"));
 
-    if (!invoice) {
+console.log("BONUS DARI INVOICE:", invoice.bonus);
+console.log("DATA INVOICE LENGKAP:", invoice);
+
+        if (!invoice) {
 
         alert("Tidak ada invoice yang dipilih.");
 
@@ -48,6 +51,38 @@ window.onload = function () {
 
     document.getElementById("wa").innerText =
         invoice.wa;
+
+// ===============================
+// Bonus Pembeli
+// ===============================
+
+const bonusSection =
+    document.getElementById("bonusSection");
+
+const bonusElement =
+    document.getElementById("bonus");
+
+if (bonusSection && bonusElement) {
+
+    if (
+        invoice.bonus &&
+        invoice.bonus.trim() !== ""
+    ) {
+
+        bonusElement.innerText =
+            invoice.bonus;
+
+        bonusSection.style.display =
+            "block";
+
+    } else {
+
+        bonusSection.style.display =
+            "none";
+
+    }
+
+}
 
     // ===============================
     // Ringkasan

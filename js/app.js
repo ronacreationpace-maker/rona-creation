@@ -198,10 +198,14 @@ loadCustomer();
         wa:
             document.getElementById("wa").value,
 
-        alamat:
-            document.getElementById("alamat").value,
+alamat:
+    document.getElementById("alamat").value,
 
-        subtotal:
+bonus:
+    document.getElementById("bonus")?.value.trim() || "",
+
+subtotal:
+
     Number(
         document
         .getElementById("subtotal")
@@ -442,6 +446,7 @@ localStorage.removeItem("invoiceGoogleID");
     document.getElementById("customer").value = "";
     document.getElementById("wa").value = "";
     document.getElementById("alamat").value = "";
+    document.getElementById("bonus").value = "";
 
     // Ringkasan
     document.getElementById("ongkir").value = 0;
@@ -663,10 +668,14 @@ console.log(
             wa:
                 document.getElementById("wa").value,
 
-            alamat:
-                document.getElementById("alamat").value,
+alamat:
+    document.getElementById("alamat").value,
 
-            subtotal:
+bonus:
+    document.getElementById("bonus")?.value.trim() || "",
+
+subtotal:
+
     Number(
         document
             .getElementById("subtotal")
@@ -774,6 +783,7 @@ localStorage.setItem(
         customer: data.customer,
         wa: data.wa,
         alamat: data.alamat,
+        bonus: data.bonus,
         subtotal: data.subtotal,
         ongkir: data.ongkir,
         diskon: data.diskon,
@@ -1172,10 +1182,14 @@ function ambilDataInvoiceForm() {
         wa:
             document.getElementById("wa")?.value || "",
 
-        alamat:
-            document.getElementById("alamat")?.value || "",
+alamat:
+    document.getElementById("alamat")?.value || "",
 
-        subtotal:
+bonus:
+    document.getElementById("bonus")?.value.trim() || "",
+
+subtotal:
+
             Number(
                 document
                     .getElementById("subtotal")
